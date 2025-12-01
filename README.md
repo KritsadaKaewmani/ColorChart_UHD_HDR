@@ -18,10 +18,12 @@ High Dynamic Range (HDR): The reference white is set at 203 nits (absolute).<br>
 
 **Color Profile Embedding**: All exported files are embedded with their corresponding ICC profile.
 
+<small>
 ICC_PROFILE_SRGB = "/System/Library/ColorSync/Profiles/sRGB Profile.icc"<br>
 ICC_PROFILE_DISPLAY_P3 = "/System/Library/ColorSync/Profiles/Display P3.icc"<br>
 ICC_PROFILE_DISPLAY_P3_PQ = "/Library/Application Support/Adobe/Color/Profiles/P3_PQ.icc" (Customized HDR Display P3 with PQ) <br>
 ICC_PROFILE_REC2020_PQ = "/Library/Application Support/Adobe/Color/Profiles/HDR_UHD_ST2084.icc"<br>
+</small>
 
 ![Alt text](https://github.com/KritsadaKaewmani/ColorChart_UHD_HDR/blob/main/macbeth_colorchecker_SDR_W100_sRGB.png)
 
@@ -35,7 +37,7 @@ The script also creates an untonemapped Rec.2020 + PQ + W203 chart in TIF and PN
 <br>
 Color Pipeline : ARRI Alexa35 MXF (Helen and John) -> ACES 2.0 AlexLogC4 IDT -> ACES 2065-1 -> White 203 -> Rec.2020PQ <br>
 
-![Alt text](https://github.com/KritsadaKaewmani/ColorChart_UHD_HDR/blob/main/macbeth_HelenAndJohn_UntoneMapped_Rec2020_PQ.png)
+![Alt text](https://github.com/KritsadaKaewmani/ColorChart_UHD_HDR/blob/main/macbeth_HelenAndJohn_UntoneMapped_Rec2020_PQ_W203.png)
 
 💾 **3. pq_patches.py**
 
