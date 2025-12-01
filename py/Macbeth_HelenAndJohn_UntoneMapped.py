@@ -262,7 +262,7 @@ png_export_g = tiff_g.copy()
 png_export_b = tiff_b.copy()
 
 # Add filename text to TIFF arrays
-output_tiff = "macbeth_HelenAndJohn_UntoneMapped_Rec2020_PQ.tiff"
+output_tiff = "macbeth_HelenAndJohn_UntoneMapped_Rec2020_PQ_W203.tiff"
 text_mask_tiff = create_text_mask(target_width, target_height, output_tiff)
 text_color_tiff = int(0.6 * 65535)
 

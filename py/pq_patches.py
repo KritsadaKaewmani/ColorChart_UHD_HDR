@@ -366,14 +366,17 @@ else:
 start_x_groups = left_margin_gray
 
 # Vertical positioning
-# Row 1: Grayscale Ramp
+# Row 1: Grayscale Ramp (with title above)
 # Gap
-# Row 2: Groups (primaries)
+# Row 2: Groups (primaries, with title above)
 # Gap
-# Row 3: Real-life patches
+# Row 3: Real-life patches (with title above and text below)
+title_space = 60  # Space for title above each section
 reallife_patch_height = patch_size
 reallife_text_space = int(patch_size * 0.4)  # Space for text below real-life patches
-total_content_height = patch_size + vertical_spacing + group_total_height + vertical_spacing + reallife_patch_height + reallife_text_space
+total_content_height = (title_space + patch_size + vertical_spacing +  # Grayscale with title
+                        title_space + group_total_height + vertical_spacing +  # Groups with title
+                        title_space + reallife_patch_height + reallife_text_space)  # Real-life with title and text
 start_y = (image_height - total_content_height) // 2
 
 # Helper function to draw text
@@ -394,7 +397,13 @@ def draw_text_on_array(img_arr, x, y, text, font_size=40):
     img_arr[mask] = [text_value, text_value, text_value]
 
 # 1. Draw Grayscale Ramp
-row_y = start_y
+# Add top margin space before the first title
+top_margin = 40  # Extra space above the first title to match bottom margin
+# Draw title first
+draw_text_on_array(img_array, left_margin_gray, start_y + top_margin, f"Grayscale Ramp (Rec.2020 PQ {int(max_lum)} nits)", 50)
+
+# Draw patches below title
+row_y = start_y + top_margin + title_space
 for i, val_tuple in enumerate(pq_16bit_gray):
     x = left_margin_gray + i * (patch_size + spacing)
     img_array[row_y:row_y+patch_size, x:x+patch_size] = val_tuple
@@ -407,8 +416,6 @@ for i, val_tuple in enumerate(pq_16bit_gray):
     
     draw_text_on_array(img_array, x, row_y + patch_size + 10, text_lum)
     draw_text_on_array(img_array, x, row_y + patch_size + 50, text_pq)
-
-draw_text_on_array(img_array, left_margin_gray, row_y - 60, f"Grayscale Ramp (Rec.2020 PQ {int(max_lum)} nits)", 50)
 
 
 # Helper to draw a 3x2 group
@@ -461,7 +468,7 @@ def draw_group(start_x, start_y, patches_high, patches_low, chromaticity_coords,
         draw_text_on_array(img_array, x, y + patch_size + 50, f"y: {chrom_y:.4f}")
 
 # Draw Groups
-groups_y = row_y + patch_size + vertical_spacing
+groups_y = row_y + patch_size + vertical_spacing + title_space
 
 # Group 1: Rec.2020 (Left)
 draw_group(start_x_groups, groups_y, pq_16bit_rec2020, pq_16bit_rec2020_low, chromaticity_rec2020, f"Rec.2020 ({int(ref_white_nits)}/{int(ref_white_nits_low)} nits)")
@@ -474,7 +481,7 @@ draw_group(start_x_groups + 2 * (group_width + group_spacing), groups_y, pq_16bi
 
 
 # --- Draw Real-Life Patches ---
-reallife_y = groups_y + group_total_height + vertical_spacing
+reallife_y = groups_y + group_total_height + vertical_spacing + title_space
 
 # Calculate layout for 11 patches
 num_reallife = len(pq_16bit_reallife)
@@ -482,7 +489,7 @@ total_reallife_width = num_reallife * patch_size + (num_reallife - 1) * spacing
 left_margin_reallife = (image_width - total_reallife_width) // 2
 
 # Draw title
-draw_text_on_array(img_array, left_margin_reallife, reallife_y - 60, f"Real-Life Colors (P3 in Rec.2020, {int(ref_white_nits)} nits)", 50)
+draw_text_on_array(img_array, left_margin_reallife, reallife_y - title_space, f"Real-Life Colors (P3 in Rec.2020, {int(ref_white_nits)} nits)", 50)
 
 # Draw patches
 for i, (val_tuple, name) in enumerate(zip(pq_16bit_reallife, reallife_names)):
