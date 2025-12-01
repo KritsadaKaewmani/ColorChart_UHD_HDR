@@ -6,11 +6,6 @@ This repository contains Python scripts designed to generate various color chart
 Scripts
 
 The repository includes three main scripts:
-macbeth_colorchecker.py
-Macbeth_HelenAndJohn_UntoneMapped.py
-pq_patches.py
-
-
 
 
 1. macbeth_colorchecker.py
