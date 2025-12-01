@@ -1,4 +1,3 @@
-Here is a revised and grammatically corrected README, rephrased for clarity and professionalism, and structured with headings for easy reading.
 
 🎨 Python Scripts for Color Chart Generation
 
