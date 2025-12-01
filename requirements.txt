@@ -1,0 +1,4 @@
+numpy
+OpenEXR
+Imath
+Pillow
