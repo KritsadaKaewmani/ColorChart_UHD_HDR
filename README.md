@@ -33,6 +33,8 @@ ICC_PROFILE_REC2020_PQ = "/Library/Application Support/Adobe/Color/Profiles/HDR_
 
 💾 **2. Macbeth_HelenAndJohn_UntoneMapped.py**
 
+![Alt text](https://github.com/KritsadaKaewmani/ColorChart_UHD_HDR/blob/main/py/macbeth_HelenAndJohn_AlexaLogC4_DisplayP3.png)
+
 <https://www.arri.com/en/learn-help/learn-help-camera-system/camera-sample-footage-reference-image#tab-294302>
 
 This script copies the real-world color code values from the original Helen and John color chart to create a full-frame EXR scene-referred color chart in UHD size.
