@@ -19,10 +19,10 @@ High Dynamic Range (HDR): The reference white is set at 203 nits (absolute).<br>
 **Color Profile Embedding**: All exported files are embedded with their corresponding ICC profile.
 
 
-ICC_PROFILE_SRGB = "/System/Library/ColorSync/Profiles/sRGB Profile.icc"<br>
-ICC_PROFILE_DISPLAY_P3 = "/System/Library/ColorSync/Profiles/Display P3.icc"<br>
-ICC_PROFILE_DISPLAY_P3_PQ = "/Library/Application Support/Adobe/Color/Profiles/P3_PQ.icc" (Customized HDR Display P3 with PQ) <br>
-ICC_PROFILE_REC2020_PQ = "/Library/Application Support/Adobe/Color/Profiles/HDR_UHD_ST2084.icc"<br>
+####ICC_PROFILE_SRGB = "/System/Library/ColorSync/Profiles/sRGB Profile.icc"<br>
+####ICC_PROFILE_DISPLAY_P3 = "/System/Library/ColorSync/Profiles/Display P3.icc"<br>
+####ICC_PROFILE_DISPLAY_P3_PQ = "/Library/Application Support/Adobe/Color/Profiles/P3_PQ.icc" (Customized HDR Display P3 with PQ) <br>
+####ICC_PROFILE_REC2020_PQ = "/Library/Application Support/Adobe/Color/Profiles/HDR_UHD_ST2084.icc"<br>
 
 
 ![Alt text](https://github.com/KritsadaKaewmani/ColorChart_UHD_HDR/blob/main/macbeth_colorchecker_SDR_W100_sRGB.png)
