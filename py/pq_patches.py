@@ -278,7 +278,6 @@ reallife_colors_p3 = [
     (0.450, 0.200, 0.800),  # Royal Iris Flower
     (0.550, 0.200, 0.600),  # Amethyst Crystal
 ]
-
 reallife_names = [
     "Deep Red Rose Petals",
     "Ripe Strawberry",
