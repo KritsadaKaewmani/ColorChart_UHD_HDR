@@ -489,7 +489,7 @@ total_reallife_width = num_reallife * patch_size + (num_reallife - 1) * spacing
 left_margin_reallife = (image_width - total_reallife_width) // 2
 
 # Draw title
-draw_text_on_array(img_array, left_margin_reallife, reallife_y - title_space, f"Real-Life Colors (P3 in Rec.2020, {int(ref_white_nits)} nits)", 50)
+draw_text_on_array(img_array, left_margin_reallife, reallife_y - title_space, f"Real-Life Colors", 50)
 
 # Draw patches
 for i, (val_tuple, name) in enumerate(zip(pq_16bit_reallife, reallife_names)):
